@@ -1,0 +1,57 @@
+sudo apt update
+sudo apt install git -y
+git -version
+
+
+browser  http://localhost:8080 
+
+Log in with your admin credentials
+
+ 1.Create a New Job:
+• On the Jenkins dashboard, click on “New Item”.
+• Enter an Item Name: For example, Maven-CI (or Gradle-CI if you prefer Gradle).
+• Select “Freestyle project”.
+• Click “OK”.
+
+Step 2: Configure Source Code Management (SCM)
+1. Select SCM:
+• In the job configuration page, scroll down to the “Source Code Management” section.
+• Select “Git” (if using Git for version control).
+
+2. Enter Repository Details:
+• Repository URL: Enter the URL of your Git repository : https://github.com/springprojects/spring-petclinic.git
+• Optionally, specify the Branch Specifier (e.g., */main)
+
+Step 3: Add Build Steps
+A. For a Maven Project
+1. Add Maven Build Step:
+• Scroll down to “Build” and click on “Add build step”.
+• Select “Invoke top-level Maven targets”.
+• Goals: In the Goals field, enter: clean package
+This command instructs Maven to clean the previous build artifacts, compile the code, run
+tests, and package the application into a JAR/WAR file.
+
+Step 4: Configure Post-build Actions
+1. Publish Test Results:
+• Scroll down to the “Post-build Actions” section.
+• Click “Add post-build action” and select “Publish JUnit test result report”.
+• Test Report XMLs: In the field, enter the pattern that matches your test report
+files. For example: **/target/surefire-reports/*.xml
+
+Step 5: Save and Run the Job
+1. Save the Configuration:
+• Click “Save” at the bottom of the job configuration page.
+2. Trigger a Build:
+• On the job’s main page, click “Build Now”.
+• The build will be added to the build history on the left side.
+3. Monitor Build Output:
+• Click on the build number (e.g., #1) and then click “Console Output”.
+• Verify that Jenkins successfully checks out the code, runs the build command
+
+2. Setting Up a CI Pipeline with Jenkins (Pipeline as Code)
+For greater flexibility and version-controlled CI configuration, you can use a Jenkins Pipeline
+defined in a Jenkinsfile.
+Step 1: Create a Pipeline Job
+1. Log into Jenkins and click on “New Item”.
+2. Enter an Item Name: For example, Pipeline-CI.
+3. Select “Pipeline” and click “OK”.
