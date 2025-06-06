@@ -1,0 +1,37 @@
+mvn archetype:generate -DgroupId=com.example -DartifactId=HelloMaven-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mkdir HelloMaven
+
+cd HelloMaven
+
+gedit pom.xml
+
+mvn compile
+
+mvn test
+
+mvn package
+
+ls target
+
+java -cp target/HelloMaven-1.0-SNAPSHOT.jar com.example.App
+
+Part B
+
+. Open a New Terminal Window
+
+mkdir HelloMavenGradle 
+
+cd HelloMavenGradle 
+
+gradle init --type java-application
+
+gedit build.gradle
+
+mkdir -p src/main/java/com/example
+
+mkdir -p src/main/java/com/example
+
+gradle build
+
+gradle run
