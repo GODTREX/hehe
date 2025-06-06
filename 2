@@ -1,41 +1,13 @@
-Experiment 2: Working with Gradle: Setting Up a Gradle Project, Understanding Build 
-Scripts (Groovy DSL), Dependency Management and Task Automation. 
-
-Step 1: Create a New Gradle Project 
-
-1. Create a new directory for your project and navigate to it: 
-
 1. mkdir Groovy
 
 2. cd Groovy 
 
-2. Run the Gradle init command:  
-
-      3.   gradle init --type java-application
-
-Step 2: Explore the Project Structure
-
-
-A. Groovy DSL Example (build.gradle)  
-Below is an example of a basic build.gradle for a Java application using Groovy DSL: 
+3.   gradle init --type java-application
 
 ➢ gedit build.gradle 
 
-4. Run the Custom Task:  
-• Command:  
-
 ➢ gradle hello 
 
-• Expected Output:  
-You should see:  
-> Task :hello  
-Hello, Gradle!
-
-Task Dependencies: (change the task name and run)
-Command: 
-
 ➢ gradle greet
-
-5. Running and Verifying Your Gradle Project:
 
 gradle build 
