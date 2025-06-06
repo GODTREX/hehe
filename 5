@@ -1,0 +1,47 @@
+java -version
+
+sudo apt install fontconfig openjdk-17-jre
+
+Java --version 
+
+
+Go to firefox and typw download Jenkins > click on first link > download and deploy >scrool 
+and click on ubuntu and Debian > copy the links and paste it in terminal. 
+Download and add the repository key so that your system trusts the Jenkins packages: 
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian
+stable/jenkins.io-2023.key
+
+
+Add the Jenkins repository to your system’s sources list: 
+
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" 
+https://pkg.jenkins.io/debian-stable binary/ | sudo tee   
+/etc/apt/sources.list.d/jenkins.list > /dev/null 
+
+
+sudo apt update
+
+sudo apt-get install Jenkins
+
+sudo systemctl start jenkins 
+
+sudo systemctl status jenkins 
+
+
+Open web browser. 
+
+Navigate to: http://localhost:8080 
+
+Unlock Jenkins: The initial Jenkins screen will ask for an administrator password. 
+Retrieve it by running: 
+
+sudo more /var/lib/jenkins/secrets/initialAdminPassword
+
+
+5. Follow the Setup Wizard:   
+o Install Suggested Plugins: Click on “Install suggested plugins” for a typical setup.  
+o Create an Admin User: Follow prompts to create your first admin user.  
+o Finalize Configuration: Complete the remaining setup steps.
+
+sudo apt-get remove purge jenkins 
