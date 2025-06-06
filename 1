@@ -1,0 +1,13 @@
+mvn archetype:generate -DgroupId=com.example -DartifactId=MyMavenApp-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+cd MyMavenApp
+
+
+mvn compile
+
+mvn test
+
+mvn package
+
+ ls target/
+java -cp target/MyMavenApp-1.0-SNAPSHOT.jar com.example.App
